@@ -241,7 +241,7 @@ class PB_WP_User_Query {
 			
 			$this->fn1_query_where = "WHERE (";
 			foreach ( $qv['role'] as $thisKey => $thisValue ){
-				$this->fn1_query_where .= $wpdb->prepare( "wppb_t2.meta_value LIKE %s", '%"' .  $wpdb->esc_like( trim( $thisValue ) ) . '"%' );
+				$this->fn1_query_where .= $wpdb->prepare( "wppb_t2.meta_value LIKE %s", '%"' .  $this->wppb_esc_like( trim( $thisValue ) ) . '"%' );
 				if ($thisKey < count($qv['role'])-1)
 					$this->fn1_query_where .= " OR ";
 			}
@@ -338,7 +338,7 @@ class PB_WP_User_Query {
 		if ( ( trim( $extraField_meta_key ) != '' ) && ( trim( $extraField_meta_value ) != '' ) ){
 			$arrayID = array();
 			
-			$results = $wpdb->get_results( $wpdb->prepare( "SELECT wppb_t1.ID FROM $wpdb->users AS wppb_t1 LEFT OUTER JOIN $wpdb->usermeta AS wppb_t2 ON wppb_t1.ID = wppb_t2.user_id AND wppb_t2.meta_key = %s WHERE wppb_t2.meta_value LIKE %s ORDER BY wppb_t1.ID", $extraField_meta_key, '%' .  $wpdb->esc_like( trim( $extraField_meta_value ) ) . '%' ) );
+			$results = $wpdb->get_results( $wpdb->prepare( "SELECT wppb_t1.ID FROM $wpdb->users AS wppb_t1 LEFT OUTER JOIN $wpdb->usermeta AS wppb_t2 ON wppb_t1.ID = wppb_t2.user_id AND wppb_t2.meta_key = %s WHERE wppb_t2.meta_value LIKE %s ORDER BY wppb_t1.ID", $extraField_meta_key, '%' .  $this->wppb_esc_like( trim( $extraField_meta_value ) ) . '%' ) );
 			
 			foreach ( $results as $result )
 				array_push( $arrayID, $result->ID );
@@ -406,7 +406,7 @@ class PB_WP_User_Query {
 		
 			$this->fn4_query_fields = "wppb_t1.ID";
 			$this->fn4_query_from = $wpdb->prepare( "FROM $wpdb->users AS wppb_t1 LEFT OUTER JOIN $wpdb->usermeta AS wppb_t2 ON wppb_t1.ID = wppb_t2.user_id AND wppb_t2.meta_key = %s", $meta_key );
-			$this->fn4_query_where = $wpdb->prepare( "WHERE wppb_t2.meta_value " . $meta_compare . " %s", $card.$wpdb->esc_like( trim( $meta_value ) ).$card );
+			$this->fn4_query_where = $wpdb->prepare( "WHERE wppb_t2.meta_value " . $meta_compare . " %s", $card.$this->wppb_esc_like( trim( $meta_value ) ).$card );
 			$this->fn4_query_orderby = "ORDER BY wppb_t1.ID ASC";
 			$this->fn4_query_limit = "";
 
@@ -481,15 +481,15 @@ class PB_WP_User_Query {
 									LEFT OUTER JOIN $wpdb->usermeta AS wppb_t4 ON wppb_t1.ID = wppb_t4.user_id AND wppb_t4.meta_key = 'nickname'";
 									
 			$this->fn5_query_where = $wpdb->prepare	( "WHERE wppb_t1.user_login LIKE %s OR wppb_t1.user_nicename LIKE %s OR wppb_t1.user_email LIKE %s OR wppb_t1.user_url LIKE %s OR wppb_t1.user_registered LIKE %s OR wppb_t1.display_name LIKE %s OR wppb_t2.meta_value LIKE %s OR wppb_t3.meta_value LIKE %s OR wppb_t4.meta_value LIKE %s", 
-													'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-													'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-													'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-													'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-													'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-													'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-													'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-													'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-													'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%' );
+													'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+													'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+													'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+													'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+													'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+													'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+													'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+													'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+													'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%' );
 									
 			if ( $qv['search_only_default_fields'] !== true ){
 				$this->fn5_query_from .= " LEFT OUTER JOIN $wpdb->usermeta AS wppb_t5 ON wppb_t1.ID = wppb_t5.user_id AND wppb_t5.meta_key = 'description' 
@@ -499,11 +499,11 @@ class PB_WP_User_Query {
 										LEFT OUTER JOIN $wpdb->usermeta AS wppb_t9 ON wppb_t1.ID = wppb_t9.user_id AND wppb_t9.meta_key = '".$wpdb->prefix."capabilities'";	
 									
 				$this->fn5_query_where .= $wpdb->prepare( " OR wppb_t5.meta_value LIKE %s OR wppb_t6.meta_value LIKE %s OR wppb_t7.meta_value LIKE %s OR wppb_t8.meta_value LIKE %s OR wppb_t9.meta_value LIKE %s", 
-														'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-														'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-														'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-														'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%',
-														'%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%' );
+														'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+														'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+														'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+														'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%',
+														'%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%' );
 
 				$i = 9;
 				$wppb_manage_fields = get_option( 'wppb_manage_fields', 'not_found' );
@@ -519,7 +519,7 @@ class PB_WP_User_Query {
 						
 						//add WHERE conditions for the custom fields
 						$this->fn5_query_where .= " ";
-						$this->fn5_query_where .= $wpdb->prepare( "OR wppb_t".$i.".meta_value LIKE %s", '%'.$wpdb->esc_like( trim( $qv['search'] ) ).'%' );
+						$this->fn5_query_where .= $wpdb->prepare( "OR wppb_t".$i.".meta_value LIKE %s", '%'.$this->wppb_esc_like( trim( $qv['search'] ) ).'%' );
 					}
 				}
 			}
@@ -723,4 +723,13 @@ class PB_WP_User_Query {
 			
 		return $query_results_array;
 	}
+
+
+    public static function wppb_esc_like( $string ){
+        global $wpdb;
+        if( method_exists( $wpdb, 'esc_like') )
+            return $wpdb->esc_like(  $string );
+        else
+            return like_escape( $string );
+    }
 }

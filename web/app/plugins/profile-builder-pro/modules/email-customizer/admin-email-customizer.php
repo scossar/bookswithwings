@@ -112,4 +112,31 @@ so please remember that you need to approve this user before he/she can log in!<
 			);
 	
 	new PB_Mustache_Generate_Admin_Box( 'aec_reg_with_admin_approval', __( 'Registration with Admin Approval', 'profilebuilder' ), 'profile-builder_page_admin-email-customizer', 'core', $mustache_vars, '', $fields );
+
+
+	$user_password_reset_email_content = __( "
+<p>{{username}} has requested a password change via the password reset feature.</p>
+<p>His/her new password is: {{password}}</p>
+", 'profilebuilder' );
+
+	$mustache_vars = wppb_email_customizer_generate_merge_tags();
+
+	$fields = array(
+		array(
+			'label'	=> __( 'Email Subject', 'profilebuilder' ), // <label>
+			'desc'	=> '', // description
+			'id'	=> 'wppb_admin_emailc_user_password_reset_email_subject', // field id and name
+			'type'	=> 'text', // type of field
+			'default'	=> '[{{site_name}}] Password Successfully Reset for {{username}}', // type of field
+		),
+		array( // Textarea
+			'label'	=> '', // <label>
+			'desc'	=> '', // description
+			'id'	=> 'wppb_admin_emailc_user_password_reset_email_content', // field id and name
+			'type'	=> 'textarea', // type of field
+			'default'	=> $user_password_reset_email_content , // type of field
+		)
+	);
+
+	new PB_Mustache_Generate_Admin_Box( 'aec_user_password_reset', __( 'Admin Notification for User Password Reset', 'profilebuilder' ), 'profile-builder_page_admin-email-customizer', 'core', $mustache_vars, '', $fields );
 }

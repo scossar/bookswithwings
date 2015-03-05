@@ -37,6 +37,12 @@ function wppb_email_customizer_generate_default_meta_merge_tags( $special_merge_
 		$merge_tags[] = array( 'name' => 'activation_url', 'type' => 'ec_activation_url', 'label' => __( 'Activation Url', 'profilebuilder' )  );
 		$merge_tags[] = array( 'name' => 'activation_link', 'type' => 'ec_activation_link', 'unescaped' => true, 'label' => __( 'Activation Link', 'profilebuilder' )  );
 	}
+
+	if ( $special_merge_tags == 'password_reset' ){
+		$merge_tags[] = array( 'name' => 'reset_key', 'type' => 'ec_reset_key', 'label' => __( 'Reset Key', 'profilebuilder' )  );
+		$merge_tags[] = array( 'name' => 'reset_url', 'type' => 'ec_reset_url', 'label' => __( 'Reset Url', 'profilebuilder' )  );
+		$merge_tags[] = array( 'name' => 'reset_link', 'type' => 'ec_reset_link', 'unescaped' => true, 'label' => __( 'Reset Link', 'profilebuilder' )  );
+	}
 	
 	return $merge_tags;
 }
@@ -45,11 +51,14 @@ function wppb_email_customizer_generate_default_meta_merge_tags( $special_merge_
 function wppb_email_customizer_generate_meta_merge_tags(){
 	$wppb_manage_fields = get_option( 'wppb_manage_fields', 'not_found' );
 	$merge_tags = array();
-			
+
 	if ( $wppb_manage_fields != 'not_found' ){
 		foreach( $wppb_manage_fields as $key => $value ){
-			if( !empty( $value['meta-name'] ) )
+			if( !empty( $value['meta-name'] ) ){
 				$merge_tags[] = array( 'name' => $value['meta-name'], 'type' => 'ec_user_meta', 'label' => $value['field-title'] );
+                if( $value['field'] == 'Select' || $value['field'] == 'Select (Multiple)' || $value['field'] == 'Checkbox' || $value['field'] == 'Radio' )
+                    $merge_tags[] = array( 'name' => $value['meta-name'] . '_labels', 'type' => 'ec_user_meta_labels', 'label' => $value['field-title'] . ' Labels' );
+            }
 		}
 	}
 	
@@ -94,6 +103,68 @@ function wppb_email_customizer_email_confirmation_filter_handler( $default_strin
 	return $default_string;
 }
 
+function wppb_email_customizer_password_reset_content_filter_handler( $default_string, $user_id, $user_login, $user_email ) {
+	$email_customizer_option = get_option( 'wppb_user_emailc_reset_email_content', 'not_found' );
+	$key = wppb_retrieve_activation_key( $user_login );
+	$url = add_query_arg( array( 'loginName' => $user_login, 'key' => $key ), wppb_curpageurl() );
+
+	if( $email_customizer_option != 'not_found' ) {
+		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags( 'password_reset' ), $email_customizer_option, array( 'user_login' => $user_login, 'reset_key' => $key, 'reset_url' => $url, 'user_email' => $user_email, 'user_id' => $user_id ) );
+	}
+
+	return $default_string;
+}
+
+function wppb_email_customizer_password_reset_title_filter_handler( $default_string, $username ) {
+	$email_customizer_option = get_option( 'wppb_user_emailc_reset_email_subject', 'not_found' );
+
+	if( $email_customizer_option != 'not_found' ) {
+		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags( 'password_reset' ), $email_customizer_option, array( 'user_login' => $username ) );
+	}
+
+	return $default_string;
+}
+
+function wppb_email_customizer_password_reset_success_content_filter_handler( $default_string, $username, $new_password, $userID ) {
+	$email_customizer_option = get_option( 'wppb_user_emailc_reset_success_email_content', 'not_found' );
+
+	if( $email_customizer_option != 'not_found' ) {
+		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags(), $email_customizer_option, array( 'user_login' => $username, 'user_password' => base64_encode( $new_password ), 'user_id' => $userID ) );
+	}
+
+	return $default_string;
+}
+
+function wppb_email_customizer_password_reset_success_title_filter_handler( $default_string, $username ) {
+	$email_customizer_option = get_option( 'wppb_user_emailc_reset_success_email_subject', 'not_found' );
+
+	if( $email_customizer_option != 'not_found' ) {
+		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags(), $email_customizer_option, array( 'user_login' => $username ) );
+	}
+
+	return $default_string;
+}
+
+function wppb_admin_email_customizer_password_reset_content_filter_handler( $default_string, $username, $new_password, $userID ) {
+	$email_customizer_option = get_option( 'wppb_admin_emailc_user_password_reset_email_content', 'not_found' );
+
+	if( $email_customizer_option != 'not_found' ) {
+		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags(), $email_customizer_option, array( 'user_login' => $username, 'user_password' => base64_encode( $new_password ), 'user_id' => $userID ) );
+	}
+
+	return $default_string;
+}
+
+function wppb_admin_email_customizer_password_reset_title_filter_handler( $default_string, $username ) {
+	$email_customizer_option = get_option( 'wppb_admin_emailc_user_password_reset_email_subject', 'not_found' );
+
+	if( $email_customizer_option != 'not_found' ) {
+		return (string) new PB_Mustache_Generate_Template( wppb_email_customizer_generate_merge_tags(), $email_customizer_option, array( 'user_login' => $username ) );
+	}
+
+	return $default_string;
+}
+
 $wppb_addonOptions = get_option( 'wppb_module_settings' );
 // using filters, we overwrite the old content with the new one from the email customizer (for the user)
 if ( $wppb_addonOptions['wppb_emailCustomizer'] == 'show' ){
@@ -111,6 +182,12 @@ if ( $wppb_addonOptions['wppb_emailCustomizer'] == 'show' ){
 
 	add_filter ( 'wppb_signup_user_notification_email_subject', 'wppb_email_customizer_email_confirmation_filter_handler', 10, 8 );
 	add_filter ( 'wppb_signup_user_notification_email_content', 'wppb_email_customizer_email_confirmation_filter_handler', 10, 8 );
+
+	add_filter ( 'wppb_recover_password_message_content_sent_to_user1', 'wppb_email_customizer_password_reset_content_filter_handler', 10, 4 );
+	add_filter ( 'wppb_recover_password_message_title_sent_to_user1', 'wppb_email_customizer_password_reset_title_filter_handler', 10, 2 );
+
+	add_filter ( 'wppb_recover_password_message_content_sent_to_user2', 'wppb_email_customizer_password_reset_success_content_filter_handler', 10, 4 );
+	add_filter ( 'wppb_recover_password_message_title_sent_to_user2', 'wppb_email_customizer_password_reset_success_title_filter_handler', 10, 2 );
 }
 
 // using filters, we overwrite the old content with the new one from the email customizer (for the admin)
@@ -120,6 +197,9 @@ if ( $wppb_addonOptions['wppb_emailCustomizerAdmin'] == 'show' ){
 
 	add_filter ( 'wppb_register_admin_email_subject_with_admin_approval', 'wppb_email_customizer_admin_approval_new_user_signup_filter_handler', 10, 5 );
 	add_filter ( 'wppb_register_admin_email_message_with_admin_approval', 'wppb_email_customizer_admin_approval_new_user_signup_filter_handler', 10, 5 );
+
+	add_filter ( 'wppb_recover_password_message_content_sent_to_admin', 'wppb_admin_email_customizer_password_reset_content_filter_handler', 10, 4 );
+	add_filter ( 'wppb_recover_password_message_title_sent_to_admin', 'wppb_admin_email_customizer_password_reset_title_filter_handler', 10, 2 );
 }
 
 
@@ -197,7 +277,10 @@ add_filter( 'mustache_variable_ec_site_name', 'wppb_ec_replace_site_name', 10, 4
  * @return string
  */
 function wppb_ec_replace_user_id( $value, $merge_tag_name, $merge_tag, $extra_data ){
-	return $extra_data['user_id'];
+    if( !empty( $extra_data['user_id'] ) )
+	    return $extra_data['user_id'];
+    else
+        return '';
 }
 add_filter( 'mustache_variable_ec_user_id', 'wppb_ec_replace_user_id', 10, 4 );
 
@@ -247,8 +330,11 @@ add_filter( 'mustache_variable_ec_username', 'wppb_ec_replace_username', 10, 4 )
 function wppb_ec_replace_user_email( $value, $merge_tag_name, $merge_tag, $extra_data ){
 	if ( isset( $extra_data['email_confirmation_unserialized_data']['user_email'] ) )
 		return $extra_data['email_confirmation_unserialized_data']['user_email'];
-	
-	return $extra_data['user_email'];
+
+    if( !empty( $extra_data['user_email'] ) )
+	    return $extra_data['user_email'];
+    else
+        return '';
 }
 add_filter( 'mustache_variable_ec_user_email', 'wppb_ec_replace_user_email', 10, 4 );
 
@@ -323,11 +409,18 @@ add_filter( 'mustache_variable_ec_website', 'wppb_ec_replace_website', 10, 4 );
  * @return string
  */
 function wppb_ec_replace_role( $value, $merge_tag_name, $merge_tag, $extra_data ){
-	if ( isset( $extra_data['email_confirmation_unserialized_data']['role'] ) ) {
+	if( isset( $extra_data['email_confirmation_unserialized_data']['role'] ) ) {
 		return $extra_data['email_confirmation_unserialized_data']['role'];
 	}
+
 	if( ! empty( $extra_data['user_data'] ) ) {
 		$user_role = implode( ', ', $extra_data['user_data']->roles );
+		return $user_role;
+	}
+
+	if( ! empty ( $extra_data['user_id'] ) ) {
+		$user_data = get_user_by( 'id', $extra_data['user_id'] );
+		$user_role = implode( ', ', $user_data->roles );
 		return $user_role;
 	}
 }
@@ -392,6 +485,63 @@ add_filter( 'mustache_variable_ec_activation_link', 'wppb_ec_replace_activation_
 
 
 /**
+ * Function that filters and returns the users reset_key in the Email Customizer
+ *
+ * @since v.2.0
+ *
+ * @param string $value
+ * @param string $merge_tag_name
+ * @param string $merge_tag
+ * @param array $extra_data
+ *
+ * @return string
+ */
+function wppb_ec_replace_reset_key( $value, $merge_tag_name, $merge_tag, $extra_data ){
+	if ( isset( $extra_data['reset_key'] ) )
+		return $extra_data['reset_key'];
+}
+add_filter( 'mustache_variable_ec_reset_key', 'wppb_ec_replace_reset_key', 10, 4 );
+
+
+/**
+ * Function that filters and returns the users reset_url in the Email Customizer
+ *
+ * @since v.2.0
+ *
+ * @param string $value
+ * @param string $merge_tag_name
+ * @param string $merge_tag
+ * @param array $extra_data
+ *
+ * @return string
+ */
+function wppb_ec_replace_reset_url( $value, $merge_tag_name, $merge_tag, $extra_data ){
+	if ( isset( $extra_data['reset_url'] ) )
+		return $extra_data['reset_url'];
+}
+add_filter( 'mustache_variable_ec_reset_url', 'wppb_ec_replace_reset_url', 10, 4 );
+
+
+/**
+ * Function that filters and returns the users reset_link in the Email Customizer
+ *
+ * @since v.2.0
+ *
+ * @param string $value
+ * @param string $merge_tag_name
+ * @param string $merge_tag
+ * @param array $extra_data
+ *
+ * @return string
+ */
+function wppb_ec_replace_reset_link( $value, $merge_tag_name, $merge_tag, $extra_data ){
+	if ( isset( $extra_data['reset_url'] ) )
+		return '<a href="'.$extra_data['reset_url'].'" target="_blank">'.$extra_data['reset_url'].'</a>';
+}
+add_filter( 'mustache_variable_ec_reset_link', 'wppb_ec_replace_reset_link', 10, 4 );
+
+
+/**
  * Function that filters and returns the users user_meta values in the Email Customizer
  *
  * @since v.2.0
@@ -413,7 +563,62 @@ function wppb_ec_replace_user_meta( $value, $merge_tag_name, $merge_tag, $extra_
 add_filter( 'mustache_variable_ec_user_meta', 'wppb_ec_replace_user_meta', 10, 4 );
 
 
+/**
+ * Function that filters and returns the users user_meta labels in the Email Customizer
+ *
+ * @since v.2.0
+ *
+ * @param string $value
+ * @param string $merge_tag_name
+ * @param string $merge_tag
+ * @param array $extra_data
+ *
+ * @return string
+ */
+function wppb_ec_replace_user_meta_labels( $value, $merge_tag_name, $merge_tag, $extra_data ){
+    /* we remove _labels from end so we get the meta name */
+    $merge_tag_name = preg_replace( '/_labels$/', '', $merge_tag_name, 1 );
 
+    if ( isset( $extra_data['email_confirmation_unserialized_data'][$merge_tag_name] ) )
+        $value = $extra_data['email_confirmation_unserialized_data'][$merge_tag_name];
+    if( !empty( $extra_data['user_id'] ) )
+        $value = get_user_meta( $extra_data['user_id'], $merge_tag_name, true );
+
+    /* get label from value */
+    /* get manage fields */
+    $fields = get_option( 'wppb_manage_fields', 'not_found' );
+    if( !empty( $fields ) ) {
+        foreach ($fields as $field) {
+            if( $field['meta-name'] == $merge_tag_name ){
+                /* get label corresponding to value. the values and labels in the backend settings are comma separated so we assume that as well here ? */
+                $saved_values = array_map( 'trim', explode( ',', $value ) );
+                $field['options'] = array_map( 'trim', explode( ',', $field['options'] ) );
+                $field['labels'] = array_map( 'trim', explode( ',', $field['labels'] ) );
+                /* get the position for each value */
+                $key_array = array();
+                if( !empty( $field['options'] ) ){
+                    foreach( $field['options'] as $key => $option ){
+                        if( in_array( $option, $saved_values ) )
+                            $key_array[] = $key;
+                    }
+                }
+
+                $show_values = array();
+                if( !empty( $key_array ) ){
+                    foreach( $key_array as $key ){
+                        if( !empty( $field['labels'][$key] ) )
+                            $show_values[] = $field['labels'][$key];
+                        else
+                            $show_values[] = $field['options'][$key];
+                    }
+                }
+
+                return implode( ',', $show_values );
+            }
+        }
+    }
+}
+add_filter( 'mustache_variable_ec_user_meta_labels', 'wppb_ec_replace_user_meta_labels', 10, 4 );
 
 // function that filters the From email address
 function wppb_website_email($sender_email){

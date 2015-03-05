@@ -7,7 +7,7 @@ custom registration, custom registration form, custom registration page, extra u
 front-end register, front-end registration, frontend edit profile, edit profileregistration, customize profile, user fields, builder, profile builder, custom fields, avatar
 Requires at least: 3.1
 Tested up to: 4.1
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 
 
 Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add custom ones.
@@ -97,6 +97,16 @@ This plugin only adds/removes fields in the front-end. The default information-f
 
 
 == Changelog ==
+= 2.1.1 =
+Created Add-On Page in Profile Builder
+Added Email Customizer for Password Reset email
+Now in Userlisting you can display the labels for checkboxes, selects and radios
+Now in Email Customizer you can show the labels for checkboxes, selects and radios
+Added "redirect_url" parameter to Register and Edit-profile shortcodes
+We now check if $wpdb->esc_like() function exists so the plugin works below WordPress 4.0
+Added support for Tweenty Fifteen theme to better target inputs
+Add support for "redirect_url" parameter to Login shortcode (will do the same thing as "redirect" - for consistency)
+
 = 2.1.0 =
 Added a WYSIWYG extra field
 Updated ReCAPTCHA to the new “Are you a robot?" CAPTCHA

@@ -85,7 +85,7 @@ function wppb_generate_userlisting_merge_tags( $type ){
 	
 	if ( $wppb_manage_fields != 'not_found' )
 		foreach( $wppb_manage_fields as $key => $value ){
-			if ( ( $value['field'] == 'Default - Name (Heading)' ) || ( $value['field'] == 'Default - Contact Info (Heading)' ) || ( $value['field'] == 'Default - About Yourself (Heading)' ) || ( $value['field'] == 'Heading' ) || ( $value['field'] == 'Default - Password' ) || ( $value['field'] == 'Default - Repeat Password' ) ){
+			if ( ( $value['field'] == 'Default - Name (Heading)' ) || ( $value['field'] == 'Default - Contact Info (Heading)' ) || ( $value['field'] == 'Default - About Yourself (Heading)' ) || ( $value['field'] == 'Heading' ) || ( $value['field'] == 'Default - Password' ) || ( $value['field'] == 'Default - Repeat Password' ) || ( $value['field'] == 'Select (User Role)' ) ){
 				//do nothing for the headers and the password fields
 				
 			}elseif ( $value['field'] == 'Default - Username' )
@@ -111,6 +111,10 @@ function wppb_generate_userlisting_merge_tags( $type ){
             }
             elseif ( $value['field'] == 'WYSIWYG' ){
                 $merge_tags[] = array( 'name' => $type.'_'.$value['meta-name'], 'type' => $user_meta, 'unescaped' => true, 'label' => $value['field-title'] );
+            }
+            elseif( ( $value['field'] == 'Checkbox' || $value['field'] == 'Radio' || $value['field'] == 'Select' || $value['field'] == 'Select (Multiple)' ) && ( $type == 'meta' ) ){
+                $merge_tags[] = array( 'name' => $type.'_'.$value['meta-name'], 'type' => $user_meta, 'label' => $value['field-title'] );
+                $merge_tags[] = array( 'name' => $type.'_'.$value['meta-name'].'_labels', 'type' => $user_meta.'_labels', 'label' => $value['field-title']. ' Labels' );
             }
             else
 				$merge_tags[] = array( 'name' => $type.'_'.$value['meta-name'], 'type' => $user_meta, 'label' => $value['field-title'] );
@@ -512,6 +516,55 @@ function wppb_userlisting_show_user_meta( $value, $name, $children, $extra_info 
 	return apply_filters('wppb_userlisting_user_meta_value', $value, $name);
 }
 add_filter( 'mustache_variable_user_meta', 'wppb_userlisting_show_user_meta', 10, 4 );
+
+/* select, checkbox and radio can have their labels displayed */
+function wppb_userlisting_show_user_meta_labels( $value, $name, $children, $extra_info ){
+    $userID = wppb_get_query_var( 'username' );
+
+    $user_id = ( !empty( $extra_info['user_id'] ) ? $extra_info['user_id'] : '' );
+
+    if( empty( $userID ) )
+        $userID = $user_id;
+
+    // strip first meta_ from $name
+    $name = preg_replace( '/meta_/', '', $name, 1 );
+    $name = preg_replace( '/_labels$/', '', $name, 1 );
+
+    $value = get_user_meta( $userID, $name, true );
+    /* get manage fields */
+    $fields = get_option( 'wppb_manage_fields', 'not_found' );
+    if( !empty( $fields ) ) {
+        foreach ($fields as $field) {
+            if( $field['meta-name'] == $name ){
+                /* get label corresponding to value. the values and labels in the backend settings are comma separated so we assume that as well here ? */
+                $saved_values = array_map( 'trim', explode( ',', $value ) );
+                $field['options'] = array_map( 'trim', explode( ',', $field['options'] ) );
+                $field['labels'] = array_map( 'trim', explode( ',', $field['labels'] ) );
+                /* get the position for each value */
+                $key_array = array();
+                if( !empty( $field['options'] ) ){
+                    foreach( $field['options'] as $key => $option ){
+                        if( in_array( $option, $saved_values ) )
+                            $key_array[] = $key;
+                    }
+                }
+
+                $show_values = array();
+                if( !empty( $key_array ) ){
+                    foreach( $key_array as $key ){
+                        if( !empty( $field['labels'][$key] ) )
+                            $show_values[] = $field['labels'][$key];
+                        else
+                            $show_values[] = $field['options'][$key];
+                    }
+                }
+
+                return apply_filters( 'wppb_userlisting_user_meta_value_label', implode( ',', $show_values ), $name );
+            }
+        }
+    }
+}
+add_filter( 'mustache_variable_user_meta_labels', 'wppb_userlisting_show_user_meta_labels', 10, 4 );
 
 function wppb_modify_userlisting_user_meta_value($value, $name){
     $fields = get_option( 'wppb_manage_fields', 'not_found' );
@@ -1323,7 +1376,7 @@ function wppb_set404(){
         $extraField_meta_value = apply_filters( 'wppb_display_profile_meta_field_value', '' );	//the value of the above parameter; the users with these 2 combinations will be excluded
 
         if ( ( trim($extraField_meta_key) != '' ) && ( trim( $extraField_meta_value) != '' ) ){
-            $results = $wpdb->get_results( $wpdb->prepare( "SELECT wppb_t1.ID FROM $wpdb->users AS wppb_t1 LEFT OUTER JOIN $wpdb->usermeta AS wppb_t2 ON wppb_t1.ID = wppb_t2.user_id AND wppb_t2.meta_key = %s WHERE wppb_t2.meta_value LIKE %s ORDER BY wppb_t1.ID", $extraField_meta_key, '%'.$wpdb->esc_like(trim($extraField_meta_value)).'%' ) );
+            $results = $wpdb->get_results( $wpdb->prepare( "SELECT wppb_t1.ID FROM $wpdb->users AS wppb_t1 LEFT OUTER JOIN $wpdb->usermeta AS wppb_t2 ON wppb_t1.ID = wppb_t2.user_id AND wppb_t2.meta_key = %s WHERE wppb_t2.meta_value LIKE %s ORDER BY wppb_t1.ID", $extraField_meta_key, '%'. PB_WP_User_Query::wppb_esc_like(trim($extraField_meta_value)).'%' ) );
             if( !empty( $results ) ){
                 foreach ($results as $result){
                     array_push($arrayID, $result->ID);

@@ -197,4 +197,61 @@ function wppb_user_email_customizer_add_mustache_in_backend(){
 	
 	new PB_Mustache_Generate_Admin_Box( 'uec_notif_unapproved_email', __( 'Unapproved User Notification', 'profilebuilder' ), 'profile-builder_page_user-email-customizer', 'core', $mustache_vars, '', $fields );
 
+	/*
+	 * Password Reset Email
+	 */
+	// we format the var like this for proper line breaks.
+	$uec_reset = __( "
+<p>Someone requested that the password be reset for the following account: {{site_name}}<br/>
+Username: {{username}}</p>
+<p>If this was a mistake, just ignore this email and nothing will happen.</p>
+<p>To reset your password, visit the following address:<br/>
+{{{reset_link}}}</p>
+", 'profilebuilder' );
+	$mustache_vars = wppb_email_customizer_generate_merge_tags( 'password_reset' );
+	$fields = array(
+		array(
+			'label'	=> __( 'Email Subject', 'profilebuilder' ), // <label>
+			'desc'	=> '', // description
+			'id'	=> 'wppb_user_emailc_reset_email_subject', // field id and name
+			'type'	=> 'text', // type of field
+			'default'	=> __( '[{{site_name}}] Password Reset', 'profilebuilder' ), // type of field
+		),
+		array( // Textarea
+			'label'	=> '', // <label>
+			'desc'	=> '', // description
+			'id'	=> 'wppb_user_emailc_reset_email_content', // field id and name
+			'type'	=> 'textarea', // type of field
+			'default'	=> $uec_reset, // type of field
+		)
+	);
+
+	new PB_Mustache_Generate_Admin_Box( 'uec_reset', __( 'Password Reset Email', 'profilebuilder' ), 'profile-builder_page_user-email-customizer', 'core', $mustache_vars, '', $fields );
+
+	/*
+ * Password Reset Success Email
+ */
+	// we format the var like this for proper line breaks.
+	$uec_reset_success = __( "
+<p>You have successfully reset your password to: {{password}}</p>
+", 'profilebuilder' );
+	$mustache_vars = wppb_email_customizer_generate_merge_tags( 'password_reset_success' );
+	$fields = array(
+		array(
+			'label'	=> __( 'Email Subject', 'profilebuilder' ), // <label>
+			'desc'	=> '', // description
+			'id'	=> 'wppb_user_emailc_reset_success_email_subject', // field id and name
+			'type'	=> 'text', // type of field
+			'default'	=> __( '[{{site_name}}] Password Reset Successfully', 'profilebuilder' ), // type of field
+		),
+		array( // Textarea
+			'label'	=> '', // <label>
+			'desc'	=> '', // description
+			'id'	=> 'wppb_user_emailc_reset_success_email_content', // field id and name
+			'type'	=> 'textarea', // type of field
+			'default'	=> $uec_reset_success, // type of field
+		)
+	);
+
+	new PB_Mustache_Generate_Admin_Box( 'uec_reset_success', __( 'Password Reset Success Email', 'profilebuilder' ), 'profile-builder_page_user-email-customizer', 'core', $mustache_vars, '', $fields );
 }
