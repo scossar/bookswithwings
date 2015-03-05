@@ -20,6 +20,8 @@ $sage_includes = [
   'lib/nav.php',                   // Custom nav modifications
   'lib/gallery.php',               // Custom [gallery] modifications
   'lib/extras.php',                // Custom functions
+	'lib/custom-loops.php',
+	'lib/bww-chapters.php',
 ];
 
 foreach ($sage_includes as $file) {

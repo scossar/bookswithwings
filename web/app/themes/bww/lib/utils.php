@@ -46,3 +46,19 @@ function is_element_empty($element) {
   $element = trim($element);
   return !empty($element);
 }
+
+/*
+ * Add body class for when we are in 'preview' mode
+ */
+
+
+/*
+ * Get permalink from pagename
+ */
+function testeleven_get_permalink_from_title($title, $post_type = 'page') {
+	$page = get_page_by_title($title, OBJECT, $post_type);
+	$id = $page->ID;
+	return esc_url(get_permalink($id));
+}
+
+

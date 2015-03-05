@@ -1,0 +1,36 @@
+// Keep the 'edit' links out of the document flow
+.editable {
+  position: relative;
+  .clearfix;
+}
+
+.edit-post {
+  position: absolute;
+  top: -18px;
+  right: 22px;
+}
+
+.img .edit-post {
+  position: absolute;
+  top: 11px;
+  right: 22px;
+}
+.edit-post a {
+  position: relative;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  color: @link-color;
+}
+
+// All images outside of the header need to me responsive
+.main img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Element styles
+ul {
+  list-style: none;
+  padding-left: 0;
+}
