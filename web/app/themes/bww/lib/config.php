@@ -62,6 +62,7 @@ function display_sidebar() {
         ['is_page_template', 'template-custom.php'],
 	      ['is_page_template', 'default'],
 	      ['is_singular', 'chapter'],
+	      ['is_post_type_archive', 'chapter'],
       ]
     );
 

@@ -7,12 +7,12 @@
 			go back to the previous tab and save your work. Thanks.
 		</div>
 	</div>
-	<!--  <div class="site-highlight"></div>-->
+	  <div class="site-highlight"></div>
 	<div class="container">
 		<div class="row">
 			<div class="site-logo">
 				<a href="<?php echo esc_url(home_url('/')); ?>">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bww_logo_4_with_eye.png"
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_1.png"
 					     alt="Books With Wings"/>
 				</a>
 			</div>
@@ -38,6 +38,7 @@
 					?>
 				</nav>
 			</div>
-		</div><!-- end of row -->
+		</div>
 	</div>
 </header>
+

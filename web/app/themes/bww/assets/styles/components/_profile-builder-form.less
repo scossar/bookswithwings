@@ -1,0 +1,60 @@
+// Add Bootstrap styles to the wordpress profile builder form
+.wppb-form-field {
+  .form-group;
+}
+
+.wppb-user-forms input[type="text"],
+.wppb-user-forms input[type="email"],
+.wppb-user-forms input[type="password"],
+.wppb-user-forms select,
+select,
+.wppb-user-forms textarea {
+  .form-control;
+}
+
+// Style the submit buttons
+.wppb-user-forms input[type="submit"],
+.wppb-user-forms input[type="button"] {
+  .btn;
+  .btn-primary;
+  font-family: @headings-font-family;
+}
+
+// Set the labels font to the headings font
+// This is set in _global.scss
+
+.wppb-user-forms h4 {
+  font-weight: bold;
+  font-size: @font-size-h5;
+}
+
+// Have the success message extend bootstrap alert-success
+#wppb_form_success_message {
+  .alert-success;
+}
+
+.wppb-success {
+  .alert;
+  .alert-success;
+}
+
+// Have the error message extend bootstrap alert-error
+#wppb_general_top_error_message,
+.wppb-error {
+  .alert;
+  .alert-warning;
+}
+
+// Give a warning color to the form error messages
+.wppb-form-error,
+.wppb-warning {
+  color: @brand-warning;
+}
+
+.wppb-description-delimiter {
+  font-size: @font-size-small;
+}
+
+.login-register-lost-password {
+  font-size: @font-size-small;
+}

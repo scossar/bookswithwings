@@ -22,3 +22,13 @@ function title() {
     return get_the_title();
   }
 }
+
+// Filter the archive_title to get rid of 'Archive:'
+function clean_up_archive_title($title) {
+  if (is_post_type_archive('chapter')) {
+//	 $title = preg_replace('/Archives: /', '', $title);
+	  $title = 'Books With Wings chapters';
+  }
+	return $title;
+}
+add_filter('get_the_archive_title', 'Roots\Sage\Titles\clean_up_archive_title');

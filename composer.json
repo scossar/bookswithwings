@@ -44,7 +44,11 @@
     "composer/installers": "v1.0.12",
     "vlucas/phpdotenv": "1.0.9",
     "johnpbloch/wordpress": "4.1.1",
-    "wpackagist-plugin/contact-form-7": "~4.1"
+    "wpackagist-plugin/wpmandrill": "~1.33",
+    "wpackagist-plugin/lightweight-social-icons": "0.2.*",
+    "wpackagist-plugin/wp-migrate-db": "0.6.*",
+    "wpackagist-plugin/password-protected": "~1.9",
+    "wpackagist-plugin/uber-login-logo": "~1.5"
   },
   "extra": {
     "installer-paths": {

@@ -22,6 +22,7 @@ $sage_includes = [
   'lib/extras.php',                // Custom functions
 	'lib/custom-loops.php',
 	'lib/bww-chapters.php',
+	'lib/wpdonations.php',
 ];
 
 foreach ($sage_includes as $file) {

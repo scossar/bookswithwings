@@ -3,18 +3,21 @@
 @sidebar-sm-columns:    4;
 
 // Colors
-@brand-primary:         #a5c6bd;
-@brand-secondary: #6c245c;
+//@brand-primary:         #a5c6bd;
+//@brand-secondary: #6c245c;
+@brand-primary: #b5b130;
+@brand-secondary: #601771;
+
 
 // Text colors
-@gray-base: #231f20;
-@link-color: lighten(@brand-secondary, 2%);
+@gray-base: #000000;
+@link-color: @brand-secondary;
 @link-hover-color: @text-color;
 // Component colors
-@body-bg: #f5f1eb;
-@header-bg: lighten(@brand-primary, 11%);
-
-@footer-bg: #e5ddcc;
+@body-bg: #f6f5e6;
+//@header-bg: lighten(@brand-primary, 11%);
+@header-bg: @body-bg;
+@footer-bg: darken(@body-bg, 10%);
 
 //== Navbar
 //
@@ -28,15 +31,15 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             #35182f;
+@navbar-default-color:             @link-color;
 @navbar-default-bg:                #f8f8f8;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
-@navbar-default-link-color:                #35182f;
-@navbar-default-link-hover-color:          #333;
+@navbar-default-link-color:                @link-color;
+@navbar-default-link-hover-color:          @text-color;
 @navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         @link-color;
+@navbar-default-link-active-color:         @text-color;
 //@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
 @navbar-default-link-active-bg:            @header-bg;
 
@@ -53,10 +56,16 @@
 @navbar-default-toggle-icon-bar-bg:        #888;
 @navbar-default-toggle-border-color:       #ddd;
 
+// Font stacks
+@font-family-sans-serif: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+@font-family-serif: Georgia, Times, 'Times New Roman', serif;
 
+@headings-font-family: @font-family-serif;
+@font-family-base: @font-family-sans-serif;
 
 // Font sizes
 @font-size-base: 18px;
+
 
 // A basic rhythm unit for margins etc.
 @rhythm: floor(@font-size-base * @line-height-base);

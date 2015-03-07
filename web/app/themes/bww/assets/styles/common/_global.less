@@ -6,13 +6,14 @@
 
 .edit-post {
   position: absolute;
-  top: -18px;
+  top: -16px;
   right: 22px;
+  z-index: 9998;
 }
 
 .img .edit-post {
   position: absolute;
-  top: 11px;
+  top: -22px;
   right: 22px;
 }
 .edit-post a {
@@ -21,6 +22,7 @@
   text-decoration: none;
   font-weight: bold;
   color: @link-color;
+  z-index: 9999;
 }
 
 // All images outside of the header need to me responsive
@@ -29,8 +31,4 @@
   height: auto;
 }
 
-// Element styles
-ul {
-  list-style: none;
-  padding-left: 0;
-}
+

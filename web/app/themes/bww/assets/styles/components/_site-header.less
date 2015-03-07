@@ -1,22 +1,37 @@
 .banner {
   background-color: @header-bg;
+  font-family: @font-family-sans-serif;
+  margin-bottom: 0;
 }
 
-.banner {
-  font-family: @headings-font-family;
-  padding-bottom: @rhythm;
+//.banner a {
+//  text-decoration: none;
+//}
+
+.navbar-default .navbar-nav li a {
+  font-size: 22px;
+  font-weight: bold;
 }
 
-.banner a {
-  text-decoration: none;
+@media (min-width: @screen-sm-min) {
+  .navbar-default .navbar-nav li a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .navbar-default .navbar-nav .active {
+    text-decoration: underline;
+  }
 }
 
 // Center the logo on mobile screens
 .banner .site-logo img {
   .center-block;
+  float: none;
   // pad out the right side to center it
   padding-right: 40px;
-  padding-bottom: @rhythm;;
+  margin: @rhythm * 0.5 auto;
+//  padding-bottom: @rhythm;
 }
 
 // For small screens give the logo 3 columns and the secondary-header and the
@@ -33,6 +48,7 @@
 }
 
 .banner .header-secondary {
+  margin-top: 6px;
   .make-sm-column(9);
 }
 
@@ -96,28 +112,7 @@
 // Menu button
 .navbar-header button {
   float: none;
-//  color: @brand-secondary;
-//  font-weight: bold;
-//  background: lighten(@brand-secondary, 10%);
+  color: @link-color;
   margin-top: @rhythm;
 }
 
-// Mobile menu li styles
-.navbar-default .navbar-nav li a {
-  font-size: 22px;
-//  font-weight: bold;
-  color: @text-color;
-  text-decoration: underline;
-//  color: $brand-primary;
-  &:hover {
-    color: @link-color;
-  }
-}
-
-// Color for mobile li.active a
-.navbar-default .navbar-nav .active a {
-//  color: $link-color;
-//  &:hover {
-//    color: $link-color;
-//  }
-}

@@ -61,4 +61,10 @@ function testeleven_get_permalink_from_title($title, $post_type = 'page') {
 	return esc_url(get_permalink($id));
 }
 
+function get_permalink_by_slug($slug, $post_type = 'page') {
+	$page = get_page_by_path($slug, OBJECT, $post_type);
+	$id = $page->ID;
+	return get_permalink($id);
+}
+
 

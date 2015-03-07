@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "842b8a2eadb2be67dc9123bca7dea0ac",
+    "hash": "4ed14e471aa0e80bd705e3173aa918b5",
     "packages": [
         {
             "name": "composer/installers",
@@ -224,16 +224,16 @@
             "time": "2014-10-16 14:50:21"
         },
         {
-            "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.1",
+            "name": "wpackagist-plugin/lightweight-social-icons",
+            "version": "0.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.1"
+                "url": "http://plugins.svn.wordpress.org/lightweight-social-icons/",
+                "reference": "tags/0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/lightweight-social-icons.0.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -241,7 +241,87 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/contact-form-7/"
+            "homepage": "https://wordpress.org/plugins/lightweight-social-icons/"
+        },
+        {
+            "name": "wpackagist-plugin/password-protected",
+            "version": "1.9",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/password-protected/",
+                "reference": "tags/1.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/password-protected.1.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/password-protected/"
+        },
+        {
+            "name": "wpackagist-plugin/uber-login-logo",
+            "version": "1.5.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/uber-login-logo/",
+                "reference": "tags/1.5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/uber-login-logo.1.5.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/uber-login-logo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-migrate-db",
+            "version": "0.6.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wp-migrate-db/",
+                "reference": "tags/0.6.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-migrate-db.0.6.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-migrate-db/"
+        },
+        {
+            "name": "wpackagist-plugin/wpmandrill",
+            "version": "1.33",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wpmandrill/",
+                "reference": "tags/1.33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wpmandrill.1.33.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wpmandrill/"
         }
     ],
     "packages-dev": [],

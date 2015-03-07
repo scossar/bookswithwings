@@ -13,7 +13,7 @@
 		</li>
 	<?php else : ?>
 		<li>
-		  <a href="<?php echo \Roots\Sage\Utils\testeleven_get_permalink_from_title('Login'); ?>">Login</a>
+		  <a href="<?php echo \Roots\Sage\Utils\get_permalink_by_slug('login'); ?>">Login/Register</a>
 		</li>
 	<?php endif; ?>
 	<?php // If we're not on the homepage, give the 'Home' link. ?>
@@ -23,7 +23,7 @@
 		</li>
 	<?php endif; ?>
 	<li>
-		<a href="<?php echo \Roots\Sage\Utils\testeleven_get_permalink_from_title('Contact'); ?>">
+		<a href="<?php echo \Roots\Sage\Utils\get_permalink_by_slug('contact'); ?>">
 			Contact
 		</a>
 	</li>
