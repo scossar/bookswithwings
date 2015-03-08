@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8335461fe6e30d9ec1c4821df7ff9cb3",
+    "hash": "aa2cbca24e78dc8d6cbce0720690ed1d",
     "packages": [
         {
             "name": "composer/installers",
@@ -266,16 +266,16 @@
             "time": "2014-10-16 14:50:21"
         },
         {
-            "name": "wpackagist-plugin/easy-facebook-share-thumbnails",
-            "version": "1.9.6",
+            "name": "wpackagist-plugin/facebook-thumb-fixer",
+            "version": "1.4.9",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/easy-facebook-share-thumbnails/",
+                "url": "http://plugins.svn.wordpress.org/facebook-thumb-fixer/",
                 "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/easy-facebook-share-thumbnails.zip",
+                "url": "https://downloads.wordpress.org/plugin/facebook-thumb-fixer.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -283,7 +283,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/easy-facebook-share-thumbnails/"
+            "homepage": "https://wordpress.org/plugins/facebook-thumb-fixer/"
         },
         {
             "name": "wpackagist-plugin/lightweight-social-icons",
