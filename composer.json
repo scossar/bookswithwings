@@ -49,7 +49,8 @@
     "wpackagist-plugin/wp-migrate-db": "0.6.*",
     "wpackagist-plugin/password-protected": "~1.9",
     "wpackagist-plugin/uber-login-logo": "~1.5",
-    "roots/soil": "~3.0"
+    "roots/soil": "~3.0",
+    "wpackagist-plugin/easy-facebook-share-thumbnails": "~1.9"
   },
   "extra": {
     "installer-paths": {
