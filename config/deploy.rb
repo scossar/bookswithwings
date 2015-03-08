@@ -1,5 +1,5 @@
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'bookswithwings'
+set :repo_url, 'https://github.com/scossar/bookswithwings'
 
 # Branch options
 # Prompts for the branch name (defaults to current branch)
@@ -32,7 +32,7 @@ end
 
 # The above restart task is not run by default
 # Uncomment the following line to run it on deploys if needed
-# after 'deploy:publishing', 'deploy:restart'
+after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
   desc 'Update WordPress template root paths to point to the new release'
