@@ -2,6 +2,7 @@
 web/app/plugins/*
 !web/app/plugins/admin-menu-editor-pro
 !web/app/plugins/advanced-custom-fields-pro
+!web/app/plugins/testeleven-positioned-content
 #!web/app/plugins/interactive-world-maps
 !web/app/plugins/password-protected
 !web/app/plugins/profile-builder-pro
