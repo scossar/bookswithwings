@@ -1,0 +1,231 @@
+// The start of a stylesheet for <ie9
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1; /* IE < 8 */
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.row {
+  width: 100%;
+  background: #777;
+//  padding: 12px;
+}
+img {
+  max-width: 400px;
+}
+
+.site-logo {
+  width: 33%;
+  float: left;
+  margin: 12px;
+  .clearfix;
+}
+
+.header-secondary {
+  width: 33%;
+  float: right;
+  .clearfix;
+;
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline;
+    float: left;
+    margin-right: 12px;
+  }
+}
+
+//.navbar-nav {
+////  width: 100%;
+//  clear: both;
+//  margin-top: 12px;
+//  li {
+//    display: inline;
+//    float: left;
+//    margin: 12px;
+//  }
+//  .dropdown-menu {
+//    margin-left: 0;
+//    padding-left: 0;
+//    li {
+//      background: red;
+//      float: none;
+//      display: block;
+//    }
+//  }
+//}
+
+.navbar-nav,
+.navbar-nav ul,
+.navbar-nav li,
+.navbar-nav a {
+  border: none;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+.navbar-nav {
+  height: 37px;
+  display: block;
+  border: 1px solid;
+  border-radius: 5px;
+  width: auto;
+  border-color: #080808;
+  margin: 0;
+  padding: 0;
+}
+.navbar-nav > ul {
+  list-style: inside none;
+  margin: 0;
+  padding: 0;
+}
+.navbar-nav > ul > li {
+  list-style: inside none;
+  float: left;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.navbar-nav.align-center > ul {
+  text-align: center;
+}
+.navbar-nav.align-center > ul > li {
+  float: none;
+  margin-left: -3px;
+}
+.navbar-nav.align-center ul ul {
+  text-align: left;
+}
+.navbar-nav.align-center > ul > li:first-child > a {
+  border-radius: 0;
+}
+.navbar-nav > ul > li > a {
+  outline: none;
+  display: block;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-right: 1px solid #080808;
+  color: #ffffff;
+  padding: 12px 20px;
+}
+.navbar-nav > ul > li:first-child > a {
+  border-radius: 5px 0 0 5px;
+}
+.navbar-nav > ul > li > a:after {
+  content: "";
+  position: absolute;
+  border-right: 1px solid;
+  top: -1px;
+  bottom: -1px;
+  right: -2px;
+  z-index: 99;
+  border-color: #3c3c3c;
+}
+.navbar-nav ul li.has-sub:hover > a:after {
+  top: 0;
+  bottom: 0;
+}
+.navbar-nav > ul > li.has-sub > a:before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 6px;
+  border: 5px solid transparent;
+  border-top: 5px solid #ffffff;
+}
+.navbar-nav > ul > li.has-sub:hover > a:before {
+  top: 19px;
+}
+.navbar-nav > ul > li.has-sub:hover > a {
+  padding-bottom: 14px;
+  z-index: 999;
+  border-color: #3f3f3f;
+}
+.navbar-nav ul li.has-sub:hover > ul,
+.navbar-nav ul li.has-sub:hover > div {
+  display: block;
+}
+.navbar-nav > ul > li.has-sub > a:hover,
+.navbar-nav > ul > li.has-sub:hover > a {
+  background: #3f3f3f;
+  border-color: #3f3f3f;
+}
+.navbar-nav ul li > ul,
+.navbar-nav ul li > div {
+  display: none;
+  width: auto;
+  position: absolute;
+  top: 38px;
+  background: #3f3f3f;
+  border-radius: 0 0 5px 5px;
+  z-index: 999;
+  padding: 10px 0;
+}
+.navbar-nav ul li > ul {
+  width: 200px;
+}
+.navbar-nav ul ul ul {
+  position: absolute;
+}
+.navbar-nav ul ul li:hover > ul {
+  left: 100%;
+  top: -10px;
+  border-radius: 5px;
+}
+.navbar-nav ul li > ul li {
+  display: block;
+  list-style: inside none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.navbar-nav ul li > ul li a {
+  outline: none;
+  display: block;
+  position: relative;
+  font: 10pt Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 8px 20px;
+}
+.navbar-nav,
+.navbar-nav ul ul > li:hover > a,
+.navbar-nav ul ul li a:hover {
+  background: #3c3c3c;
+  background: -moz-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3c3c3c), color-stop(100%, #222222));
+  background: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+  background: -o-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+  background: -ms-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+  background: linear-gradient(top, #3c3c3c 0%, #222222 100%);
+}
+.navbar-nav > ul > li > a:hover {
+  background: #080808;
+  color: #ffffff;
+}
+.navbar-nav ul ul a:hover {
+  color: #ffffff;
+}
+.navbar-nav > ul > li.has-sub > a:hover:before {
+  border-top: 5px solid #ffffff;
+}

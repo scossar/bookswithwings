@@ -19,7 +19,7 @@
 	<?php // If we're not on the homepage, give the 'Home' link. ?>
 	<?php if (!is_front_page()) : ?>
 		<li>
-			<a href="<?php echo get_site_url(); ?>">Home</a>
+			<a href="<?php echo get_home_url(); ?>">Home</a>
 		</li>
 	<?php endif; ?>
 	<li>

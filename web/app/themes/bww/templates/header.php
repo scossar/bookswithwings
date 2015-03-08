@@ -1,13 +1,6 @@
 <?php use Roots\Sage\Nav; ?>
 
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
-	<div class="preview-info">
-		<div class="alert alert-info" role="alert">
-			You are viewing this page in preview mode. If you like what you see, please
-			go back to the previous tab and save your work. Thanks.
-		</div>
-	</div>
-	  <div class="site-highlight"></div>
 	<div class="container">
 		<div class="row">
 			<div class="site-logo">
