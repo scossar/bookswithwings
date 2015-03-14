@@ -1,4 +1,4 @@
-set :application, 'bookswithwings'
+set :application, 'bookswithwings.staging'
 set :repo_url, 'https://github.com/scossar/bookswithwings'
 
 # Branch options
