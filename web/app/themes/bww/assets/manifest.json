@@ -25,6 +25,6 @@
     }
   },
   "config": {
-    "devUrl": ""
+    "devUrl": "bookswithwings.prod"
   }
 }
