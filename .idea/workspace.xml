@@ -53,7 +53,7 @@
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1344">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1308">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
@@ -74,26 +74,26 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="deploy.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="deploy.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config/deploy.rb">
               <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1985">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.7741935" vertical-offset="18" max-vertical-offset="2010">
+                  <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/deploy/production.rb">
               <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
                 <state />
               </provider>
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1308">
+                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1308">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
@@ -117,7 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/app/themes/bww/templates/content-page.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/lib/config.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/templates/menu-get-involved.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/lib/titles.php" />
@@ -168,6 +167,7 @@
         <option value="$PROJECT_DIR$/web/app/themes/bww/.gitignore" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/assets/manifest.json" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/templates/header.php" />
+        <option value="$PROJECT_DIR$/config/deploy.rb" />
       </list>
     </option>
   </component>
@@ -630,17 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2010">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/common/_global.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="1458">
@@ -667,6 +656,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1308">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7741935" vertical-offset="18" max-vertical-offset="2010">
+          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
           <folding />
         </state>
       </provider>
