@@ -20,6 +20,9 @@ web/app/uploads/*
 !web/app/mu-plugins/register-theme-directory.php
 !web/app/mu-plugins/bedrock-autoloader.php
 
+# Migrations
+migrations/
+
 # WordPress
 web/wp
 web/.htaccess
