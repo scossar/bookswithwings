@@ -7,7 +7,7 @@ set :repo_url, 'https://github.com/scossar/bookswithwings'
 
 # Hardcodes branch to always be master
 # This could be overridden in a stage config file
-set :branch, :staging
+set :branch, :master
 
 set :deploy_to, -> { "/srv/www/#{fetch(:application)}" }
 
