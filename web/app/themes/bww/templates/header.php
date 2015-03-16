@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="site-logo">
 				<a href="<?php echo esc_url(home_url('/')); ?>">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_1.png"
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/bww-logo.png"
 					     alt="Books With Wings"/>
 				</a>
 			</div>

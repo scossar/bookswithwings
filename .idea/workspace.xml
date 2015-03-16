@@ -70,8 +70,8 @@
           <file leaf-file-name="base.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/app/themes/bww/base.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.23076923" vertical-offset="0" max-vertical-offset="1710">
-                  <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+                <state vertical-scroll-proportion="0.8269231" vertical-offset="0" max-vertical-offset="1710">
+                  <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
                   <folding>
                     <element signature="e#30#52#0#PHP" expanded="true" />
                     <marker date="1426539654000" expanded="true" signature="242:451" placeholder="..." />
@@ -94,11 +94,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_site-header.less" pinned="false" current-in-tab="false">
+          <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/app/themes/bww/templates/header.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.25" vertical-offset="0" max-vertical-offset="1584">
+                  <caret line="7" column="81" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_site-header.less" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_site-header.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-20.25" vertical-offset="0" max-vertical-offset="2934">
-                  <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+                <state vertical-scroll-proportion="0.32692307" vertical-offset="0" max-vertical-offset="2934">
+                  <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -114,10 +124,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/app/themes/bww/templates/footer.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.46153846" vertical-offset="0" max-vertical-offset="1476">
+                <state vertical-scroll-proportion="-18.0" vertical-offset="0" max-vertical-offset="1476">
                   <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
                   <folding>
                     <marker date="1426540866000" expanded="true" signature="608:879" placeholder="..." />
@@ -174,7 +184,6 @@
         <option value="$PROJECT_DIR$/web/app/themes/bww/404.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/.gitignore" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/assets/manifest.json" />
-        <option value="$PROJECT_DIR$/web/app/themes/bww/templates/header.php" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/lib/titles.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/index.php" />
@@ -194,8 +203,9 @@
         <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/layouts/_pages.less" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_wp-classes.less" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/base.php" />
-        <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_site-header.less" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/templates/footer.php" />
+        <option value="$PROJECT_DIR$/web/app/themes/bww/templates/header.php" />
+        <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_site-header.less" />
       </list>
     </option>
   </component>
@@ -577,14 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/templates/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.25" vertical-offset="0" max-vertical-offset="1584">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_forms.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="1152">
@@ -697,17 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23076923" vertical-offset="0" max-vertical-offset="1710">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <element signature="e#30#52#0#PHP" expanded="true" />
-            <marker date="1426539654000" expanded="true" signature="242:451" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/themes/bww/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="1206">
@@ -716,23 +707,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_site-header.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.25" vertical-offset="0" max-vertical-offset="2934">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/themes/bww/templates/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46153846" vertical-offset="0" max-vertical-offset="1476">
+        <state vertical-scroll-proportion="-18.0" vertical-offset="0" max-vertical-offset="1476">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <marker date="1426540866000" expanded="true" signature="608:879" placeholder="..." />
             <marker date="1426540866000" expanded="true" signature="718:869" placeholder="{...}" />
             <marker date="1426540866000" expanded="true" signature="778:865" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/templates/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.25" vertical-offset="0" max-vertical-offset="1584">
+          <caret line="7" column="81" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8269231" vertical-offset="0" max-vertical-offset="1710">
+          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="e#30#52#0#PHP" expanded="true" />
+            <marker date="1426539654000" expanded="true" signature="242:451" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_site-header.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32692307" vertical-offset="0" max-vertical-offset="2934">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

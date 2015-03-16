@@ -14,18 +14,18 @@
   margin-right: 0;
 }
 
-// Center the logo on mobile screens
 .banner .site-logo img {
-  .center-block;
-  float: none;
-  // pad out the right side to center it
-  padding-right: 46px;
-  margin: @rhythm * 0.5 auto;
+  margin: 12px auto;
 }
-
-.no-canvas .site-logo img {
-  margin-left: 0;
-  float: left;
+// Center the logo on mobile screens
+// Put this inside of a media query so that it doesn't flash centered on ie8
+@media (max-width:@screen-xs-max) {
+  .banner .site-logo img {
+    .center-block;
+    float: none;
+    // pad out the right side to center it
+    padding-right: 46px;
+  }
 }
 
 // For small screens give the logo 2 columns and the secondary-header and the
