@@ -1,1 +1,0 @@
-{"version":3,"sources":["/Users/simoncossar/testeleven/bookswithwings.prod/bookswithwings.prod/web/app/themes/bww/assets/styles/editor-style.less"],"names":[],"mappings":"AAEA;EACE,uBAAA","file":"editor-style.css","sourcesContent":["//@import \"main\";\n\nbody {\n  margin: 12px !important;\n}\n"],"sourceRoot":"/source/"}

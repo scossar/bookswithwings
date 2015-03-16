@@ -30,8 +30,8 @@
           <file leaf-file-name="_variables.less" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/common/_variables.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="2376">
-                  <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+                <state vertical-scroll-proportion="-15.75" vertical-offset="648" max-vertical-offset="2430">
+                  <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
@@ -67,14 +67,35 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="base.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="base.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/app/themes/bww/base.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8269231" vertical-offset="0" max-vertical-offset="1710">
-                  <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+                <state vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="1710">
+                  <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
                   <folding>
-                    <element signature="e#30#52#0#PHP" expanded="true" />
                     <marker date="1426539654000" expanded="true" signature="242:451" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_volunteer-menu.less" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_volunteer-menu.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.21153846" vertical-offset="0" max-vertical-offset="1278">
+                  <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/scripts/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2418">
+                  <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -107,7 +128,7 @@
           <file leaf-file-name="_site-header.less" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_site-header.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.32692307" vertical-offset="0" max-vertical-offset="2934">
+                <state vertical-scroll-proportion="0.23076923" vertical-offset="90" max-vertical-offset="2934">
                   <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
                   <folding />
                 </state>
@@ -196,8 +217,6 @@
         <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_forms.less" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/lib/assets.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_attention-box.less" />
-        <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_volunteer-menu.less" />
-        <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/common/_variables.less" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/lib/config.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/lib/utils.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/layouts/_pages.less" />
@@ -206,6 +225,8 @@
         <option value="$PROJECT_DIR$/web/app/themes/bww/templates/footer.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/templates/header.php" />
         <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_site-header.less" />
+        <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/common/_variables.less" />
+        <option value="$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_volunteer-menu.less" />
       </list>
     </option>
   </component>
@@ -553,16 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46875" vertical-offset="0" max-vertical-offset="2418">
-          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/themes/bww/templates/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="1134">
@@ -631,22 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_volunteer-menu.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.75" vertical-offset="0" max-vertical-offset="1278">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/common/_variables.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="2376">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -727,21 +722,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_site-header.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23076923" vertical-offset="90" max-vertical-offset="2934">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/themes/bww/base.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8269231" vertical-offset="0" max-vertical-offset="1710">
-          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+        <state vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="1710">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
           <folding>
-            <element signature="e#30#52#0#PHP" expanded="true" />
             <marker date="1426539654000" expanded="true" signature="242:451" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_site-header.less">
+    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32692307" vertical-offset="0" max-vertical-offset="2934">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2418">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/common/_variables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.75" vertical-offset="648" max-vertical-offset="2430">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/themes/bww/assets/styles/components/_volunteer-menu.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21153846" vertical-offset="0" max-vertical-offset="1278">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
