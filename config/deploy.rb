@@ -1,4 +1,4 @@
-set :application, 'bookswithwings.staging'
+set :application, 'bookswithwings'
 set :repo_url, 'https://github.com/scossar/bookswithwings'
 
 # Branch options
@@ -25,7 +25,7 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      # execute :service, :nginx, :reload
+      execute :service, :nginx, :reload
     end
   end
 end

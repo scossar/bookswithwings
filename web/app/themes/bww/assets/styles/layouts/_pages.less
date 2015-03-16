@@ -35,3 +35,23 @@
 .chapters h4 {
   font-size: @font-size-h2;
 }
+
+// for ie
+.no-js .no-canvas {
+  .about-us .main,
+  .volunteer .main,
+  .get-involved .main,
+  .category-books-with-wings-in-afghanistan .main,
+  .chapters .main,
+  .single-chapter .main,
+  .donate .main,
+  .make-a-donation .main,
+  .recover-password .main,
+  .register .main,
+  .login .main,
+  .contact .main,
+  .preview .main {
+    .make-xs-column(8);
+    .make-xs-column-offset(2)
+  }
+}
