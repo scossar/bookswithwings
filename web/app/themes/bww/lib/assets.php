@@ -110,7 +110,7 @@ function assets() {
       'name' => 'jquery',
       'cdn' => 'google',
       'file' => 'jquery.min.js'
-    ], asset_path('scripts/jquery.js')), [], null, true);
+    ], asset_path('scripts/jquery.js')), [], null, false);
 
     add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
   }
@@ -119,7 +119,8 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), [], null, true);
+//  wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), [], null, true);
+	wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), [], null, false);
   wp_enqueue_script('jquery');
   wp_enqueue_script('sage_js', asset_path('scripts/main.js'), [], null, true);
 }

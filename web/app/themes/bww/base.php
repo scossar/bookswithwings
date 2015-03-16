@@ -4,6 +4,7 @@ namespace Roots\Sage;
 
 use Roots\Sage\Config;
 use Roots\Sage\Wrapper;
+use Roots\Sage\Utils;
 
 ?>
 
@@ -18,7 +19,10 @@ use Roots\Sage\Wrapper;
     <![endif]-->
     <?php
       do_action('get_header');
-      get_template_part('templates/header');
+    get_template_part('templates/header');
+    if (is_page(array('volunteer', 'get-involved', 'register'))) {
+	    get_template_part('templates/volunteer-menu');
+    }
     ?>
     <div class="wrap container" role="document">
       <div class="content row">

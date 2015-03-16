@@ -23,12 +23,15 @@ function title() {
   }
 }
 
-// Filter the archive_title to get rid of 'Archive:'
+// Filter the archive_title to get rid of 'Archive:' and 'Category: '
 function clean_up_archive_title($title) {
   if (is_post_type_archive('chapter')) {
-//	 $title = preg_replace('/Archives: /', '', $title);
 	  $title = 'Books With Wings chapters';
   }
+	if (is_archive()) {
+		$title = preg_replace('/Category: /', '', $title);
+	}
+
 	return $title;
 }
 add_filter('get_the_archive_title', 'Roots\Sage\Titles\clean_up_archive_title');

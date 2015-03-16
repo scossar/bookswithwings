@@ -4,24 +4,14 @@
   margin-bottom: 0;
 }
 
-//.banner a {
-//  text-decoration: none;
-//}
-
-.navbar-default .navbar-nav li a {
-//  font-size: 22px;
-//  font-weight: bold;
+.navbar-default .navbar-nav li {
+  padding-right: 6px;
+  margin-right: 6px;
 }
 
-@media (min-width: @screen-sm-min) {
-  .navbar-default .navbar-nav li a {
-    &:hover {
-//      text-decoration: underline;
-    }
-  }
-  .navbar-default .navbar-nav .active {
-//    text-decoration: underline;
-  }
+.navbar-default .navbar-nav li:last-child {
+  padding-right: 0;
+  margin-right: 0;
 }
 
 // Center the logo on mobile screens
@@ -29,27 +19,19 @@
   .center-block;
   float: none;
   // pad out the right side to center it
-  padding-right: 40px;
+  padding-right: 46px;
   margin: @rhythm * 0.5 auto;
-//  padding-bottom: @rhythm;
 }
 
-// For small screens give the logo 3 columns and the secondary-header and the
-// primary-nav each 9 columns
+// For small screens give the logo 2 columns and the secondary-header and the
+// primary-nav each 10 columns
 .banner .site-logo {
-  .make-sm-column(3);
-}
-
-// Cancel the center-block so the logo will float to the left on small screens
-@media (min-width: @screen-sm-min) {
-  .banner .site-logo img {
-    margin-left: 0;
-  }
+  .make-sm-column(2);
 }
 
 .banner .header-secondary {
   margin-top: 6px;
-  .make-sm-column(9);
+  .make-sm-column(10);
 }
 
 // Float the secondary navigation to the right of the screen
@@ -78,36 +60,13 @@
   }
 }
 
-// Divide the navbar into equal sections on small screens and up.
-@media (min-width: @screen-sm-min) {
-  .navbar-default .navbar-collapse ul {
-    width: 100%;
-  }
-  .navbar-default .navbar-collapse li {
-    width: 33%;
-    a {
-//      text-align: center;
-      text-align: left;
-    }
-  }
-}
-
-// On screens between @screen-sm-min and 999px we want the navbar across the bottom
+// On screens between @screen-sm-min and 1100px we want the navbar across the bottom
 // of the header.
 .primary-nav-container {
   clear: both;
+  width: 100%;
   .make-sm-column(12);
   margin-top: 0;
-}
-
-// At 999px we want to move the navbar to the side of the logo
-@media (min-width: 999px) {
-  .primary-nav-container {
-    clear: none;
-    .make-sm-column(9);
-    margin-top: 94px;
-    margin-bottom: 0;
-  }
 }
 
 // Menu button
@@ -120,4 +79,30 @@
 // Style the dropdown menu
 .navbar-nav .dropdown-menu li {
   width: 100%;
+}
+
+@media (min-width: @screen-sm-min) {
+  // Cancel the 'center-block' so the logo will float to the left on small screens.
+  .banner .site-logo img {
+    margin-left: 0;
+  }
+}
+
+// line up the nav menu with 8 column page layouts when there is room.
+@media (min-width: 1200px ) {
+  .navbar-default .navbar-nav li:first-child a {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+// At 1100px we want to move the navbar to the side of the logo
+@media (min-width: 1100px) {
+  .primary-nav-container,
+  .banner .section-heading {
+    clear: none;
+    .make-sm-column(10);
+    margin-top: 94px;
+    margin-bottom: 0;
+  }
 }

@@ -50,7 +50,13 @@ function is_element_empty($element) {
 /*
  * Add body class for when we are in 'preview' mode
  */
-
+function add_preview_class($classes) {
+	if (is_preview()) {
+		$classes[] = 'preview';
+	}
+	return $classes;
+}
+add_filter('body_class', 'Roots\Sage\Utils\add_preview_class');
 
 /*
  * Get permalink from pagename
@@ -67,4 +73,8 @@ function get_permalink_by_slug($slug, $post_type = 'page') {
 	return get_permalink($id);
 }
 
+function get_id_from_slug($slug, $post_type = 'page') {
+	$page = get_page_by_path($slug, OBJECT, $post_type);
+	return $page->ID;
+}
 

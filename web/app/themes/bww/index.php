@@ -2,7 +2,10 @@
 
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
+<!--    --><?php //_e('Sorry, no results were found.', 'sage'); ?>
+	  <?php _e('Sorry, there are not yet any posts in this category. Books With Wings
+	            is run entirely by volunteers. If you would like to help out, please
+	            get in contact with us through this site.', 'sage'); ?>
   </div>
 <?php endif; ?>
 
