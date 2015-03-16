@@ -22,7 +22,7 @@
 		var imgs = document.getElementsByTagName( 'img' );
 		for( i = 0; i < imgs.length; i++ ) {
 			w = imgs[i].getAttribute( 'width' );
-			if ( 615 < w ) {
+			if ( 600 < w ) {
 				imgs[i].removeAttribute( 'width' );
 				imgs[i].removeAttribute( 'height' );
 			}
