@@ -10,7 +10,7 @@ use Roots\Sage\Utils;
 
 <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
-    <!--[if lt IE 9]>
+    <!--[if lt IE 8]>
       <div class="alert alert-warning">
 	      It seems that you are accessing this page with an older web browser.
 	      We are working to create a version of this site that will look good for you.
