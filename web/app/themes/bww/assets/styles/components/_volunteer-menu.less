@@ -1,12 +1,20 @@
 .volunteer-menu {
-  margin-top: @rhythm * 0.5;
+  margin-top: floor(@rhythm * 0.5);
 }
 
-// make the menu-chapters link appear to be active when on the .post-type-archive-chapter page
-.post-type-archive-chapter .volunteer-menu .menu-chapters a {
-  background: @brand-primary;
-  color: #ffffff;
+.volunteer-menu .sub-navigation {
+  .make-sm-column(8);
+  .make-sm-column-offset(2);
 }
 
-// make the .menu-get-involved link appear to be active when on the 'chapters archive'
-// page and the 'register' page
+.volunteer-menu li a {
+  color: @link-color;
+  &:hover {
+    color: @text-color;
+    background: @body-bg;
+  }
+}
+
+.volunteer-menu .active {
+ color: @text-color;
+}

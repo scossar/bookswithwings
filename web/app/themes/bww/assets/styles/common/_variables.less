@@ -5,6 +5,10 @@
 // Colors
 @brand-primary: #b5b130;
 @brand-secondary: #601771;
+@state-warning-bg: lighten(@brand-primary, 40%);
+@state-warning-border: @brand-primary;
+@state-success-bg: lighten(@brand-secondary, 70%);
+@state-success-border: @brand-secondary;
 
 
 // Text colors
@@ -16,11 +20,7 @@
 @header-bg: @body-bg;
 @footer-bg: darken(@body-bg, 10%);
 
-//== Navbar
-//
-//##
-
-// Basics of a navbar
+// Navbar
 @navbar-height:                    50px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
@@ -28,8 +28,6 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-//@navbar-default-color:             @link-color;
-//@navbar-default-bg:                #f8f8f8;
 @navbar-default-bg:                @body-bg;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
@@ -53,9 +51,8 @@
 @navbar-default-brand-hover-bg:            transparent;
 
 // Navbar toggle
-@navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #888;
-@navbar-default-toggle-border-color:       #ddd;
+@navbar-default-toggle-hover-bg:           darken(@body-bg, 5%);
+@navbar-default-toggle-border-color:       @brand-primary;
 
 @dropdown-bg: @header-bg;
 @dropdown-border: transparent;
@@ -70,19 +67,14 @@
 @blockquote-border-color: lighten(@brand-primary, 40%);
 
 // Font stacks
-@font-family-sans-serif: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-@font-family-serif: Georgia, Times, 'Times New Roman', serif;
+@font-family-sans-serif: "nimbus-sans", Arial, 'Helvetica Neue', Helvetica, sans-serif;
+@font-family-serif: "garamond-premier-pro", Georgia, Times, 'Times New Roman', serif;
 
-@headings-font-family: @font-family-serif;
-@font-family-base: @font-family-sans-serif;
+@headings-font-family: @font-family-sans-serif;
+@font-family-base: @font-family-serif;
 
 // Font sizes
 @font-size-base: 18px;
-@font-size-h1: floor((@font-size-base * 2.1));
-@font-size-h2: floor((@font-size-base * 1.7));
-@font-size-h3: floor((@font-size-base * 1.25));
-@font-size-h4: floor((@font-size-base * 1));
-
 
 // A basic rhythm unit for margins etc.
 @rhythm: floor(@font-size-base * @line-height-base);
