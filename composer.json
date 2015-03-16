@@ -50,7 +50,8 @@
     "wpackagist-plugin/password-protected": "~1.9",
     "wpackagist-plugin/uber-login-logo": "~1.5",
     "roots/soil": "~3.0",
-    "wpackagist-plugin/facebook-thumb-fixer": "~1.4"
+    "wpackagist-plugin/facebook-thumb-fixer": "~1.4",
+    "wpackagist-plugin/respondjs": "~1.4"
   },
   "extra": {
     "installer-paths": {
