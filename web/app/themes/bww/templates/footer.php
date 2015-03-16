@@ -15,4 +15,18 @@
 			</div>
 		</div>
 	</div>
+	<?php // Scale images (somewhat) correctly for <IE9 ?>
+	<!--[if lt IE 9 ]>
+	<script>
+		var imgs, i, w;
+		var imgs = document.getElementsByTagName( 'img' );
+		for( i = 0; i < imgs.length; i++ ) {
+			w = imgs[i].getAttribute( 'width' );
+			if ( 615 < w ) {
+				imgs[i].removeAttribute( 'width' );
+				imgs[i].removeAttribute( 'height' );
+			}
+		}
+	</script>
+	<![endif]-->
 </footer>
