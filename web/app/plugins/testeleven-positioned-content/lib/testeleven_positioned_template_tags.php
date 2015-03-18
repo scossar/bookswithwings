@@ -11,7 +11,7 @@ function testeleven_display_positioned_full($position, $heading_level = 2, $meta
 	<?php if ($query->have_posts()) : ?>
 		<?php while ($query->have_posts()) : $query->the_post(); ?>
 			<div class="editable">
-				<article class="<?php post_class(); ?>" id="<?php echo $position; ?>">
+				<article <?php post_class(); ?> id="<?php echo $position; ?>">
 					<?php if (has_post_thumbnail()) : ?>
 						<div class="featured-image">
 							<?php the_post_thumbnail(); ?>
@@ -41,7 +41,7 @@ function testeleven_display_positioned_full($position, $heading_level = 2, $meta
 function testeleven_preview_positioned_full($position, $heading_level = 2, $meta_data = false) {
 	?>
 	<?php while (have_posts()) : the_post(); ?>
-		<article class="<?php post_class(); ?>" id="<?php echo $position; ?>">
+		<article <?php post_class(); ?> id="<?php echo $position; ?>">
 			<?php if (has_post_thumbnail()) : ?>
 				<div class="featured_image">
 					<?php the_post_thumbnail(); ?>
@@ -70,7 +70,7 @@ function testeleven_display_positioned_content($position, $meta_data = false) {
 	<?php if ($query->have_posts()) : ?>
 		<?php while ($query->have_posts()) : $query->the_post(); ?>
 			<div class="editable">
-				<article class="<?php post_class(); ?>" id="<?php echo $position; ?>">
+				<article <?php post_class(); ?> id="<?php echo $position; ?>">
 					<div class="entry-content">
 						<?php the_content(); ?>
 					</div>
@@ -89,7 +89,7 @@ function testeleven_preview_positioned_content($position) {
 	?>
 	<?php while (have_posts()) : the_post(); ?>
 		<div class="editable">
-			<article class="<?php post_class(); ?>" id="<?php echo $position; ?>">
+			<article <?php post_class(); ?> id="<?php echo $position; ?>">
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
