@@ -65,6 +65,7 @@ function display_sidebar() {
 	      ['is_singular', 'in-afghanistan'],
 	      'is_archive',
 	      'is_preview',
+	      'is_single',
 	      ['is_post_type_archive', 'chapter'],
       ]
     );
