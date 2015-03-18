@@ -8,6 +8,7 @@
 				<?php testeleven_post_in_position('footer-where','positioned_full'); ?>
 			</div>
 			<div class="footer-3">
+				<?php testeleven_post_in_position('footer-social','positioned_full'); ?>
 				<?php dynamic_sidebar('sidebar-footer'); ?>
 			</div>
 			<div class="testeleven">
