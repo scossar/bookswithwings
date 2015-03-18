@@ -54,11 +54,11 @@ function display_chapters() {
 				  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			  </h4>
 		  </header>
-		  <?php if ($description = get_field('chapter_description')) : ?>
-			  <div class="chapter-description">
-				  <?php echo $description; ?>
-			  </div>
-			<?php endif; ?>
+<!--		  --><?php //if ($description = get_field('chapter_description')) : ?>
+<!--			  <div class="chapter-description">-->
+<!--				  --><?php //echo $description; ?>
+<!--			  </div>-->
+<!--			--><?php //endif; ?>
 		<?php endwhile; ?>
 	<?php endif; ?>
 	<?php
