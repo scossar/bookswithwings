@@ -13,6 +13,7 @@
   <?php CustomLoops\display_single_post_by_category('life-in-afghanistan'); ?>
 </div>
 <aside class="sidebar" role="complementary">
-	<h3>Books With Wings Chapters</h3>
+	<?php testeleven_post_in_position('our-chapters', 'positioned_title', 3); ?>
+	<?php testeleven_post_in_position('how-bww-is-structured', 'positioned_full', 4); ?>
 	<?php Chapters\display_chapters(); ?>
 </aside>

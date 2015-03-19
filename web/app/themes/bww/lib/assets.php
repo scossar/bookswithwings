@@ -110,7 +110,7 @@ function assets() {
       'name' => 'jquery',
       'cdn' => 'google',
       'file' => 'jquery.min.js'
-    ], asset_path('scripts/jquery.js')), [], null, false);
+    ], asset_path('scripts/jquery.js')), [], null, true);
 
     add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
   }
@@ -172,3 +172,10 @@ function google_analytics() {
 if (GOOGLE_ANALYTICS_ID) {
   add_action('wp_footer', __NAMESPACE__ . '\\google_analytics', 20);
 }
+
+// Allow us to load jQuery in the footer with Gravity Forms
+add_filter('gform_init_scripts_footer', 'Roots\Sage\Assets\init_scripts');
+function init_scripts() {
+	return true;
+}
+

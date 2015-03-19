@@ -16,16 +16,9 @@
 		  <a href="<?php echo \Roots\Sage\Utils\get_permalink_by_slug('login'); ?>">Login/Register</a>
 		</li>
 	<?php endif; ?>
-	<?php // If we're not on the homepage, give the 'Home' link. ?>
-	<?php if (!is_front_page()) : ?>
-		<li>
-			<a href="<?php echo get_home_url(); ?>">Home</a>
-		</li>
-	<?php endif; ?>
 	<li>
 		<a href="<?php echo \Roots\Sage\Utils\get_permalink_by_slug('contact'); ?>">
 			Contact
 		</a>
 	</li>
-
 </ul>

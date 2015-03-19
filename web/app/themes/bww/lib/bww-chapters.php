@@ -48,18 +48,13 @@ function display_chapters() {
 	$query = new \WP_Query( $args );
 	?>
 	<?php if ( $query->have_posts() ) : ?>
-		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-			<header>
-			  <h4>
-				  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			  </h4>
-		  </header>
-<!--		  --><?php //if ($description = get_field('chapter_description')) : ?>
-<!--			  <div class="chapter-description">-->
-<!--				  --><?php //echo $description; ?>
-<!--			  </div>-->
-<!--			--><?php //endif; ?>
-		<?php endwhile; ?>
+		<ul>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+				<li>
+					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				</li>
+			<?php endwhile; ?>
+		</ul>
 	<?php endif; ?>
 	<?php
 	wp_reset_postdata();
