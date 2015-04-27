@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "052a84d54644513ab92be0f7f52324a1",
+    "hash": "c6b478e2904887b8641d93cbb34f8002",
     "packages": [
         {
             "name": "composer/installers",
@@ -92,16 +92,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.1.1",
+            "version": "4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "b6a0e3c2ef178f97ce8b709897fd4411420b3ccb"
+                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b6a0e3c2ef178f97ce8b709897fd4411420b3ccb",
-                "reference": "b6a0e3c2ef178f97ce8b709897fd4411420b3ccb",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
+                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
                 "shasum": ""
             },
             "require": {
@@ -125,7 +125,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-02-18 22:16:06"
+            "time": "2015-04-23 16:31:07"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -174,21 +174,21 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.1.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "5faa77e842d9691430825ab8592babc35998053a"
+                "reference": "ed8ba0448f9e49f3bdcdf4525505e231d1ae3571"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/5faa77e842d9691430825ab8592babc35998053a",
-                "reference": "5faa77e842d9691430825ab8592babc35998053a",
+                "url": "https://api.github.com/repos/roots/soil/zipball/ed8ba0448f9e49f3bdcdf4525505e231d1ae3571",
+                "reference": "ed8ba0448f9e49f3bdcdf4525505e231d1ae3571",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -212,7 +212,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-03-13 15:57:18"
+            "time": "2015-04-22 16:14:17"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -304,26 +304,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/lightweight-social-icons/"
-        },
-        {
-            "name": "wpackagist-plugin/password-protected",
-            "version": "1.9",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/password-protected/",
-                "reference": "tags/1.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/password-protected.1.9.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/password-protected/"
         },
         {
             "name": "wpackagist-plugin/respondjs",
