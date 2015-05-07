@@ -1,15 +1,12 @@
 # Application
 web/app/plugins/*
-!web/app/plugins/admin-menu-editor-pro
 !web/app/plugins/advanced-custom-fields-pro
 !web/app/plugins/testeleven-positioned-content
 !web/app/plugins/gravityforms
-#!web/app/plugins/interactive-world-maps
-!web/app/plugins/password-protected
 !web/app/plugins/profile-builder-pro
 !web/app/plugins/uber-login-logo
-!web/app/plugins/wp-toolbar-editor
 !web/app/plugins/wpdonations
+!web/app/plugins/wp-migrate-db-pro
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*
 !web/app/mu-plugins/.gitkeep
